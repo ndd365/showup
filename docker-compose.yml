@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+   appnode:
+      image: 'showup/showup_node:latest'
+      build: ./node
+      ports:
+         - '3000:3000'
+      environment:
+         - SHOWUP_DEPLOYMENT=local
