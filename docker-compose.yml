@@ -2,6 +2,8 @@ version: '2'
 
 services:
    appnode:
+      volumes:
+         - ./node/express/showup:/usr/src/app
       image: 'showup/showup_node:latest'
       build: ./node
       ports:
