@@ -9,7 +9,7 @@ var calendar = google.calendar('v3');
 var oauth2Client = new OAuth2(
   "377772959689-bcknbu9demsg3v85gbmg7t2he94593ps.apps.googleusercontent.com",
   "Q9jscTdwWHcw4LU8QcBBAuI9",
-  "http://riven.zspin.com:3000/google_auth_complete"
+  "http://showupapp.me/google_auth_complete"
 );
 
 // generate a url that asks permissions for Google+ and Google Calendar scopes
