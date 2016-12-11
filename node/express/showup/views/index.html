@@ -38,6 +38,12 @@
         a:active { color:#DB2763; text-decoration: underline; }
     </style>
 
+    <script>
+        $(function() {
+    
+        });
+    </script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -57,19 +63,49 @@
                     <!-- <a style="color: white;" href="/google_auth?calid=tn9cl12g4s7l978r0iqk3ieppk@group.calendar.google.com">Click here to add calendar</a> -->
 
                     <div class="col-md-8 col-md-offset-2">
+                        <!-- <div id="zipcode3">
+                            <form class="form-inline">
+                                <div class="form-group form-group-lg">
+                                    <label for="join-input" style='font-size: 26px'>Enter:&nbsp</label>
+                                    <input type="text" class="form-control" size="30" id="join-input" name="zipcodeID" placeholder="Zip Code">
+                                </div>
+                                <button class="btn btn-go input-lg" style='font-size: 20px'>Go</button>
+                            <br>
+                            </form>
+                        </div>
+                        <div id="zipcode2">
+                            <form method="POST" class="form-inline" action="">
+                                <div class="form-group form-group-lg">
+                                    <label for="join-input" style='font-size: 26px'>Enter:&nbsp</label>
+                                    <input type="text" class="form-control" size="30" id="join-input" name="zipcodeID" placeholder="Zip Code">
+                                </div>
+                                <button type="submit" class="btn btn-go input-lg" style='font-size: 20px'>Go</button>
+                            <br>
+                            </form>
+                        </div> -->
                         <div id="zipcode">
-							<form method="POST" class="form-inline" action="">
-								<div class="form-group form-group-lg">
-								    <label for="join-input" style='font-size: 26px'>Enter:&nbsp</label>
-								    <input type="text" class="form-control" size="30" id="join-input" name="zipcodeID" placeholder="Zip Code">
-								</div>
-								<button type="submit" class="btn btn-go input-lg" style='font-size: 20px'>Go</button>
-							<br>
-							</form>
-                    </div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3 text-right">
+                                        <!-- <label for="join-input" style='font-size: 26px'>Enter:&nbsp</label> -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" size="30" id="join-input" name="zipcodeID" placeholder="Zip Code">
+                                            <span class="input-group-btn">
+                                                <button id="search" class="btn btn-go" type="button">Go!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-left">
+                                        <!-- <button id="search" class="btn btn-go input-lg" style='font-size: 20px'>Go</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <br>
                         <br>
-                        <div class="container-fluid">
+                        <div id="results" class="container-fluid" style="visibility:hidden;">
                             <div class="row">
                                 <div class="col-md-8" style="font-size:26px">
                                     Calendar
@@ -81,7 +117,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 text-left" style="font-size:20px">
-                                    San Francisco Municipal Transportation Agency (MUNI)
+                                    SF Municipal Transportation Agency (MUNI)
                                 </div>
                                 <div class="col-md-4" style="font-size:20px">
                                     <a style="" href="/google_auth?calid=b7l5pcfq98junbadkark0f2oqc@group.calendar.google.com">Add to Google Calendar</a>
@@ -120,10 +156,13 @@
                                 </div>
                             </div>
                         </div>
-
+                    </div>
                 </div>
             </div>
-
+            <br>
+            <br>
+            <br>
+            <br>
 
         </div>
     </header>
@@ -187,14 +226,21 @@
 		};
 
 
+        $('#search').on('click', function(event) {
+          event.preventDefault(); // To prevent following the link (optional)
+          console.log("Clicked");
+          console.log($("#results"));
+          $("#results").attr("style", "visibility: visible");
+        });
+
 		if( getUrlParameter("calAdded")) {
 	    new PNotify({
 	        title: 'Calendar Added',
 	        type: 'success'
 	    });
-
 		}
 
+        
 
 	</script>
 
