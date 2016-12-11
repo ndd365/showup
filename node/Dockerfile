@@ -9,7 +9,7 @@ RUN npm install
 
 # Copy the source into the image
 COPY ./express/showup/app.js /usr/src/app/
-COPY ./express/showup/public /usr/src/app/publlic
+COPY ./express/showup/public /usr/src/app/public
 COPY ./express/showup/views /usr/src/app/views
 COPY ./express/showup/bin /usr/src/app/bin
 COPY ./express/showup/package.json /usr/src/app/
