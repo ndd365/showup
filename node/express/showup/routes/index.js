@@ -35,7 +35,8 @@ router.get('/google_auth', function(req, res, next) {
 	  access_type: 'offline',
 
 	  // If you only need one scope you can pass it as string
-	  scope: scopes
+	  scope: scopes,
+	  state: req.query.calid
 	});
 
 	res.redirect(url);
@@ -46,7 +47,10 @@ router.get('/google_auth_complete', function(req, res, next) {
 
 	var code = req.query.code;
 
-	console.log(code);
+	// This is bad. Storing calid from state
+	var calid = req.query.state;
+
+	console.log(state);
 
 	oauth2Client.getToken(code, function (err, tokens) {
 
@@ -63,36 +67,53 @@ router.get('/google_auth_complete', function(req, res, next) {
 
 			console.log(oauth2Client);
 
+			calendar_list_entry = {
+		    'id': calid
+			}
 
-			calendar.events.list({
-			    auth: oauth2Client,
-			    calendarId: 'primary',
-			    timeMin: (new Date()).toISOString(),
-			    maxResults: 10,
-			    singleEvents: true,
-			    orderBy: 'startTime'
-			  }, function(err, response) {
+			var greq = calendar.calendarList.insert({
+				'resource': calendar_list_entry,
+				'auth': oauth2Client
+			}, function(err, resp) {
+
 			    if (err) {
 			      console.log('The API returned an error: ' + err);
-			      return;
-			    }
-			    var events = response.items;
-			    if (events.length == 0) {
-			      console.log('No upcoming events found.');
-			    } else {
-			      console.log('Upcoming 10 events:');
-			      for (var i = 0; i < events.length; i++) {
-			        var event = events[i];
-			        var start = event.start.dateTime || event.start.date;
-			        console.log('%s - %s', start, event.summary);
-			      }
 			    }
 
-
-					console.log(response);
+					console.log(resp);
 				  res.render('index.html');
+			});
 
-			 });
+
+			// calendar.events.list({
+			//     auth: oauth2Client,
+			//     calendarId: 'primary',
+			//     timeMin: (new Date()).toISOString(),
+			//     maxResults: 10,
+			//     singleEvents: true,
+			//     orderBy: 'startTime'
+			//   }, function(err, response) {
+			//     if (err) {
+			//       console.log('The API returned an error: ' + err);
+			//       return;
+			//     }
+			//     var events = response.items;
+			//     if (events.length == 0) {
+			//       console.log('No upcoming events found.');
+			//     } else {
+			//       console.log('Upcoming 10 events:');
+			//       for (var i = 0; i < events.length; i++) {
+			//         var event = events[i];
+			//         var start = event.start.dateTime || event.start.date;
+			//         console.log('%s - %s', start, event.summary);
+			//       }
+			//     }
+
+
+			// 		console.log(response);
+			// 	  res.render('index.html');
+
+			//  });
 
 
 
