@@ -46,7 +46,7 @@ router.get('/google_auth', function(req, res, next) {
 router.get('/google_auth_complete', function(req, res, next) {
 
 	console.log("in google google_auth_complete");
-	
+
 	var code = req.query.code;
 
 	// This is bad. Storing calid from state
@@ -83,7 +83,7 @@ router.get('/google_auth_complete', function(req, res, next) {
 			    }
 
 					console.log(resp);
-				  res.redirect("/");
+				  res.redirect("/?calAdded");
 			});
 
 	  }
@@ -95,8 +95,9 @@ router.get('/google_auth_complete', function(req, res, next) {
 
 	});
 
-
 });
+
+
 
 
 
