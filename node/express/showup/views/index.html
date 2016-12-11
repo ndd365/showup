@@ -12,7 +12,7 @@
     <title>Grayscale - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
@@ -28,6 +28,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css" media="screen">
+        a:link { color:#66cc33; text-decoration: none; }
+        a:visited { color:#256EFF; text-decoration: none; }
+        a:hover { color:#DB2763; text-decoration: none; }
+        a:active { color:#DB2763; text-decoration: underline; }
+    </style>
 
 </head>
 
@@ -53,37 +60,56 @@
                         <br>
                         <br>
                         <br>
-                        <div class="table-responsive">
-                            <table class="table img-rounded" style="background-color: @gray-lighter;">
-                            <thead>
-                                <tr>
-                                    <th>Calendar</th>
-                                    <th>Subscribe</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>San Francisco Municipal Transportation Agency (MUNI)</td>
-                                    <td><a href="/google_auth?calid=b7l5pcfq98junbadkark0f2oqc@group.calendar.google.com">Add to Google Calendar</a></td>
-                                </tr>
-                                <tr>
-                                    <td>San Francisco Arts Commission</td>
-                                    <td><a href="/google_auth?calid=q753rhl3pvbvdieb47pfkcbjgk@group.calendar.google.com">Add to Google Calendar</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Mayor Ed Lee</td>
-                                    <td><a href="/google_auth?calid=1gt5q1osc12abs6b0aepms6oek@group.calendar.google.com">Add to Google Calendar</a></td>
-                                </tr>
-                                <tr>
-                                    <td>San Francisco Board of Supervisors</td>
-                                    <td><a href="/google_auth?calid=tn9cl12g4s7l978r0iqk3ieppk@group.calendar.google.com">Add to Google Calendar</a></td>
-                                </tr>
-                                <tr>
-                                    <td>San Francisco Planning Commission</td>
-                                    <td><a href="/google_auth?calid=qd1t88kvmodu780ra1t6n38ivk@group.calendar.google.com">Add to Google Calendar</a></td>
-                                </tr>
-                            </tbody>
-                            </table>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-8" style="font-size:26px">
+                                    Calendar
+                                </div>
+                                <div class="col-md-4" style="font-size:26px">
+                                    Subscribe
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8 text-left" style="font-size:20px">
+                                    San Francisco Municipal Transportation Agency (MUNI)
+                                </div>
+                                <div class="col-md-4" style="font-size:20px">
+                                    <a style="" href="/google_auth?calid=b7l5pcfq98junbadkark0f2oqc@group.calendar.google.com">Add to Google Calendar</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 text-left" style="font-size:20px">
+                                    San Francisco Arts Commission
+                                </div>
+                                <div class="col-md-4" style="font-size:20px">
+                                    <a style="" href="/google_auth?calid=q753rhl3pvbvdieb47pfkcbjgk@group.calendar.google.com">Add to Google Calendar</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 text-left" style="font-size:20px">
+                                    Mayor Ed Lee
+                                </div>
+                                <div class="col-md-4" style="font-size:20px">
+                                    <a style="" href="/google_auth?calid=1gt5q1osc12abs6b0aepms6oek@group.calendar.google.com">Add to Google Calendar</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 text-left" style="font-size:20px">
+                                    San Francisco Board of Supervisors
+                                </div>
+                                <div class="col-md-4" style="font-size:20px">
+                                    <a style="" href="/google_auth?calid=tn9cl12g4s7l978r0iqk3ieppk@group.calendar.google.com">Add to Google Calendar</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 text-left" style="font-size:20px">
+                                    San Francisco Planning Commission
+                                </div>
+                                <div class="col-md-4" style="font-size:20px">
+                                    <a href="/google_auth?calid=qd1t88kvmodu780ra1t6n38ivk@group.calendar.google.com">Add to Google Calendar</a>
+                                </div>
+                            </div>
                         </div>
 
                     <!-- <div class="col-md-8 col-md-offset-2"> -->                         
