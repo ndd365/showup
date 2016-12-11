@@ -10,3 +10,12 @@ services:
          - '3000:3000'
       environment:
          - SHOWUP_DEPLOYMENT=local
+#   appdb:
+#      image: 'showup/showup_db:latest'
+#      build: ./db
+#      ports:
+#         - '5432:5432'
+#      environment:
+#         - SHOWUP_DEPLOYMENT=local
+#         - POSTGRES_PASSWORD=showup
+#         - POSTGRES_USER=showup
