@@ -78,7 +78,7 @@ def sync_to_google_calendar(events):
         }
 
         print gcal_event
-        e = CAL.events().insert(calendarId='1gt5q1osc12abs6b0aepms6oek@group.calendar.google.com',
+        e = CAL.events().insert(calendarId='tn9cl12g4s7l978r0iqk3ieppk@group.calendar.google.com',
                 sendNotifications=True, body=gcal_event).execute()
 
         print e
@@ -99,6 +99,6 @@ def print_calendars():
         if not page_token:
             break
 
-events = get_calendar_data(12, 2016)
+events = get_calendar_data()
 
 sync_to_google_calendar(events)
